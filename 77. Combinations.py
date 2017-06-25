@@ -40,7 +40,7 @@ class Solution(object):
 
 
 if __name__ == '__main__':
-    print Solution().combine(5, 3)
-    print Solution().combine2(5, 3)
-    print Solution().combine3(5, 3)
-    print Solution().combine4(5, 3)
+    print Solution().combine(20, 16)
+    print Solution().combine2(20, 16)
+    print Solution().combine3(20, 16)
+    print Solution().combine4(20, 16)
