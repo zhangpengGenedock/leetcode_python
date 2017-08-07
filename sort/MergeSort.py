@@ -20,3 +20,16 @@ def merge_sort(a):
     left = merge_sort(a[:mid])
     right = merge_sort(a[mid:])
     return merge(left, right)
+
+
+# 迭代实现
+def merge_sort(a):
+    length = len(a)
+    step = 1
+    result = []
+    while step < length:
+        for left in range(0, length - step, 2 * step):
+            result += merge(a[left: left + step], a[left + step:min(left + 2 * step, length)])
+            a = a[0:left] + result + a[min(left + 2 * step, length):]
+        step *= 2
+    return a
