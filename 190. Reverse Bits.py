@@ -23,3 +23,13 @@ class Solution:
 
     def reverseBits2(self, n):
         return int(bin(n)[2:].zfill(32)[::-1], 2)
+
+    def reverseBits3(self,n ):
+        rvalue = 0
+        for i in range(0, 32):
+            rvalue <<= 1
+            rvalue += n & 1
+            n >>= 1
+
+        return rvalue
+
