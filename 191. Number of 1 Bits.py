@@ -13,6 +13,7 @@ class Solution(object):
     def hammingWeight(self, n):
         """
         https://leetcode.com/problems/number-of-1-bits/solution/
+        https://discuss.leetcode.com/topic/28481/python-2-solutions-one-naive-solution-with-built-in-functions-one-trick-with-bit-operation/2
         :type n: int
         :rtype: int
         """
