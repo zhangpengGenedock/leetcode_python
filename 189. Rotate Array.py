@@ -53,14 +53,28 @@ class Solution(object):
 
     def rotate2(self, nums, k):
         k, count = k % len(nums), 0
+        if k == 0:
+            return
         start = 0
         while count < len(nums):
             current = start
             prev = nums[start]
-            while start != current:
+            while True:
                 next = (current + k) % len(nums)
                 temp = nums[next]
                 nums[next] = prev
                 prev = temp
                 current = next
                 count += 1
+                if start == current:
+                    break
+            start += 1
+
+    def rotate3(self, nums, k):
+        # pythonic way
+        nums[:] = nums[len(nums) - k:] + nums[:len(nums) - k]
+
+
+if __name__ == '__main__':
+    solution = Solution()
+    solution.rotate2([1, 2], 1)
