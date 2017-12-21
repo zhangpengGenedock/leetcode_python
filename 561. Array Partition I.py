@@ -25,3 +25,5 @@ class Solution(object):
         """
         nums.sort()
         return sum(nums[::2])
+
+        # 还有个o(n)的算法, 在上面的链接中¬
