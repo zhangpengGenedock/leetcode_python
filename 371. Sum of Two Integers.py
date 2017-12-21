@@ -13,6 +13,7 @@ Given a = 1 and b = 2, return 3.
 class Solution(object):
     def getSum(self, a, b):
         """
+        solution： https://discuss.leetcode.com/topic/51999/python-solution-with-no-completely-bit-manipulation-guaranteed/2
         :type a: int
         :type b: int
         :rtype: int
