@@ -23,7 +23,11 @@ A[i], B[i] are integers in range [0, 10^5].
 class Solution(object):
     def anagramMappings(self, A, B):
         """
+        official solution: https://leetcode.com/problems/find-anagram-mappings/solution/
+        o(N) o(N)
         :type A: List[int]
         :type B: List[int]
         :rtype: List[int]
         """
+        D = {x: i for i, x in enumerate(B)}
+        return [D(x) for x in A]
