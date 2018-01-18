@@ -44,3 +44,17 @@ class Solution(object):
             else:
                 return mid
         return lo
+
+    def guessNumber2(self, n):
+
+        bars = [1, n]
+        while 1:
+            guessNum = (bars[0]+bars[1])/2
+            resp = guess(guessNum)
+            if resp<0:
+                bars[1]=guessNum-1
+            elif resp==0:
+                return guessNum
+            else:
+                bars[0]=guessNum+1
+
