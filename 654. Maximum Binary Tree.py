@@ -37,6 +37,31 @@ class TreeNode(object):
 class Solution(object):
     def constructMaximumBinaryTree(self, nums):
         """
+        https://discuss.leetcode.com/topic/98419/concise-python-solution-with-explanation
         :type nums: List[int]
         :rtype: TreeNode
         """
+        if not nums:
+            return None
+        i = nums.index(max(nums))
+        node = TreeNode(nums[i])
+        node.left = self.constructMaximumBinaryTree(nums[:i])
+        node.right = self.constructMaximumBinaryTree(nums[i + 1:])
+        return node
+
+
+    def constructMaximumBinaryTree2(self, nums):
+        """
+        fastest iterative submission
+        :param nums:
+        :return:
+        """
+        stack = []
+        for i in range(len(nums)):
+            curr = TreeNode(nums[i])
+            while stack and stack[-1].val < nums[i]:
+                curr.left = stack.pop()
+            if stack:
+                stack[-1].right = curr
+            stack.append(curr)
+        return stack[0]
