@@ -24,6 +24,13 @@ Every cost[i] will be an integer in the range [0, 999].
 class Solution(object):
     def minCostClimbingStairs(self, cost):
         """
+        offical solution: https://leetcode.com/problems/min-cost-climbing-stairs/solution/
+        o(n)
+        o(1)
         :type cost: List[int]
         :rtype: int
         """
+        f1 = f2 = 0
+        for x in cost:
+            f1, f2 = x + min(f1, f2), f1
+        return min(f1, f2)
