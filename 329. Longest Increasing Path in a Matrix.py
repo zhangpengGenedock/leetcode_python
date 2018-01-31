@@ -33,7 +33,7 @@ The longest increasing path is [3, 4, 5, 6]. Moving diagonally is not allowed.
 class Solution(object):
     def longestIncreasingPath(self, matrix):
         """
-        personal solution: 
+        personal solution: https://leetcode.com/problems/longest-increasing-path-in-a-matrix/discuss/78334
         :type matrix: List[List[int]]
         :rtype: int
         """
