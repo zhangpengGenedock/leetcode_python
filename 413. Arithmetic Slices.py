@@ -31,6 +31,7 @@ return: 3, for 3 arithmetic slices in A: [1, 2, 3], [2, 3, 4] and [1, 2, 3, 4] i
 class Solution(object):
     def numberOfArithmeticSlices(self, A):
         """
+        offical solution: https://leetcode.com/problems/arithmetic-slices/solution/
         :type A: List[int]
         :rtype: int
         """
