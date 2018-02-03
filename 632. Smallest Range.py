@@ -14,6 +14,7 @@ after you reset the code template, you'll see this point. """
 class Solution(object):
     def smallestRange(self, nums):
         """
+        persional solution: https://leetcode.com/problems/smallest-range/discuss/104904/Python-Heap-based-solution
         :type nums: List[List[int]]
         :rtype: List[int]
         """
