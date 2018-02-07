@@ -31,9 +31,41 @@ Special thanks to @agave and @StefanPochmann for adding this problem and creatin
 
 """
 
+
 class Solution(object):
     def getMoneyAmount(self, n):
         """
+        offical solution: https://leetcode.com/problems/guess-number-higher-or-lower-ii/solution/
+        personal solution: https://leetcode.com/problems/guess-number-higher-or-lower-ii/discuss/84769/Two-Python-solutions
+        brilliant
         :type n: int
         :rtype: int
         """
+        need = [[0] * (n + 1) for _ in range(n + 1)]
+        for lo in range(n, 0, -1):
+            for hi in range(lo + 1, n + 1):
+                need[lo][hi] = min(x + max(need[lo][x - 1], need[x + 1][hi]) for x in range(lo, hi))
+        return need[1][n]
+
+    def getMoneyAmount(self, n):
+        """
+        from submission (fast)
+        :param n: 
+        :return: 
+        """
+        dp = [[0] * (n + 1) for _ in range(n + 1)]
+
+        def dphelper(s, e):
+            if s >= e:
+                return 0
+            if dp[s][e]:
+                return dp[s][e]
+            ret = float('inf')
+            mid = (s + e) / 2
+            for m in range(mid, e + 1):
+                tmp = m + max(dphelper(s, m - 1), dphelper(m + 1, e))
+                ret = min(ret, tmp)
+            dp[s][e] = ret
+            return ret
+
+        return dphelper(1, n)
