@@ -69,3 +69,8 @@ class Solution(object):
             return ret
 
         return dphelper(1, n)
+
+
+if __name__ == '__main__':
+    for i in range(2, 100):
+        print i, Solution().getMoneyAmount(i)
