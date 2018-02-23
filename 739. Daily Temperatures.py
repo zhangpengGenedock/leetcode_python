@@ -15,16 +15,16 @@ Note: The length of temperatures will be in the range [1, 30000]. Each temperatu
 
 
 class Solution(object):
-    def dailyTemperatures(self, temperatures):
+    def dailyTemperatures(self, T):
         """
         offical solution: https://leetcode.com/problems/daily-temperatures/solution/
         :type temperatures: List[int]
         :rtype: List[int]
         """
-        ans = [0] * len(temperatures)
-        stack = []
-        for i in range(len(temperatures) - 1, -1, -1):
-            while stack and temperatures[i] >= stack[-1]:
+        ans = [0] * len(T)
+        stack = [] #indexes from hottest to coldest
+        for i in xrange(len(T) - 1, -1, -1):
+            while stack and T[i] >= T[stack[-1]]:
                 stack.pop()
             if stack:
                 ans[i] = stack[-1] - i
