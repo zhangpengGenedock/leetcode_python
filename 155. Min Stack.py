@@ -1,5 +1,5 @@
+# https://leetcode.com/problems/min-stack/description/
 # Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
-#
 # push(x) -- Push element x onto stack.
 # pop() -- Removes the element on top of the stack.
 # top() -- Get the top element.
