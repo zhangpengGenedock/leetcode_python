@@ -18,6 +18,8 @@ class Solution(object):
         """
         :type nums: List[int]
         :type target: int
+        时间复杂度：o(n)
+        空间复杂度: o(n)
         :rtype: List[int]
         """
         buff_dict = {}
