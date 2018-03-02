@@ -27,6 +27,8 @@ class ClientPool:
     def __init__(self, service, server_hosts=None, zk_path=None, zk_hosts=None, logger=None, max_renew_times=3, maxActive=20,
                  maxIdle=10, get_connection_timeout=30, socket_timeout=30, disable_time=3):
         """
+        https://app.yinxiang.com/shard/s60/nl/11061010/79e4ca2b-19cc-4697-afd6-0cef72725046/
+        
         :param service: Thrift的Service名称
         :param server_hosts: 服务提供者地址，数组类型，['ip:port','ip:port']
         :param zk_path: 服务提供者在zookeeper中的路径
