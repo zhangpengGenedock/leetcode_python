@@ -31,6 +31,8 @@ class Solution(object):
     def mergeKLists2(self, lists):
         """
         https://discuss.leetcode.com/topic/23140/108ms-python-solution-with-heapq-and-avoid-changing-heap-size
+        时间：O(nklog(k))
+        空间: O(k)
         :param lists: 
         :return: 
         """
