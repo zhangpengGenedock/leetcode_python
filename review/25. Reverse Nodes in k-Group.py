@@ -27,6 +27,15 @@ class Solution(object):
     def reverseKGroup(self, head, k):
         """
         https://discuss.leetcode.com/topic/31618/succinct-iterative-python-o-n-time-o-1-space
+        
+        Use a dummy head, and
+
+        l, r : define reversing range
+
+        pre, cur : used in reversing, standard reverse linked linked list method
+
+        jump : used to connect last node in previous k-group to first node in following k-group
+        
         :type head: ListNode
         :type k: int
         :rtype: ListNode
