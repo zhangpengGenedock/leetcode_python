@@ -26,7 +26,7 @@ class Solution(object):
                 # case 1: ()()
                 if s[i - 1] == '(':
                     # add nearest parentheses pairs + 2
-                    dp[i] = dp[i - 2] + 2
+                    dp[i] = (0 if i < 2 else dp[i - 2]) + 2
                 # case 2: (())
                 # i-dp[i-1]-1 is the index of last "(" not paired until this ")"
                 elif i - dp[i - 1] - 1 >= 0 and s[i - dp[i - 1] - 1] == '(':
