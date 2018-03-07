@@ -42,6 +42,8 @@ rotate the input matrix in-place such that it becomes:
 ]
 
 """
+
+
 class Solution(object):
     def rotate(self, matrix):
         """
@@ -56,6 +58,27 @@ class Solution(object):
             for j in range(n - n / 2):
                 matrix[i][j], matrix[~j][i], matrix[~i][~j], matrix[j][~i] = matrix[~j][i], matrix[~i][~j], \
                                                                              matrix[j][~i], matrix[i][j]
+
+    def rotate3(self, matrix):
+        """
+        思路：一维的时候翻转然后翻转，二维的时候翻转,然后转置
+        
+        /*
+         * clockwise rotate
+         * first reverse up to down, then swap the symmetry 
+         * 1 2 3     7 8 9     7 4 1
+         * 4 5 6  => 4 5 6  => 8 5 2
+         * 7 8 9     1 2 3     9 6 3
+        */
+        
+        :param matrix: 
+        :return: 
+        """
+        matrix.reverse()
+        n = len(matrix[0])
+        for i in range(n):
+            for j in range(i + 1, n):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 
 
 if __name__ == '__main__':
