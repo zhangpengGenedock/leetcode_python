@@ -19,8 +19,17 @@ class Solution(object):
     def increasingTriplet(self, nums):
         """
         https://discuss.leetcode.com/topic/39807/python-easy-o-n-solution/2
-        :type nums: List[int]
-        :rtype: bool
+        
+        C1 = so far best candidate of end element of a one-cell subsequence to form a triplet subsequence
+
+        C2 = so far best candidate of end element of a two-cell subsequence to form a triplet subsequence
+        
+        Your solution is just to keep a window of size=3, and keep updating the c1 and c2 just like the LIS(longest 
+        increasing sequence) Problem. but we know the size=3, so we need do not need to use the binary search to find 
+        the updating position, so we can do it in O(N). 
+        
+        :type nums: List[int] 
+        :rtype: bool 
         """
         first = second = float('Inf')
         for n in nums:
