@@ -16,6 +16,7 @@ class Solution(object):
         """
         :type matrix: List[List[int]]
         :rtype: void Do not return anything, modify matrix in-place instead.
+        space o(m+n)
         """
         m = len(matrix)
         if m == 0:
@@ -37,6 +38,7 @@ class Solution(object):
     def setZeroes2(self, matrix):
         """
         https://discuss.leetcode.com/topic/20134/o-1-space-solution-in-python/4
+        space o(1)
         :param matrix:
         :return:
         """
@@ -83,6 +85,7 @@ class Solution(object):
     def setZeroes3(self, matrix):
         """
         https://discuss.leetcode.com/topic/20134/o-1-space-solution-in-python/4
+        space: O(1)
         :param matrix:
         :return:
         """
