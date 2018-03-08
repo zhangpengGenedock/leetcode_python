@@ -13,6 +13,14 @@ Return 6.
 """
 class Solution(object):
     def maximalRectangle(self, matrix):
+        """
+        The solution is based on largest rectangle in histogram solution. Every row in the matrix is viewed as the 
+        ground with some buildings on it. The building height is the count of consecutive 1s from that row to above 
+        rows. The rest is then the same as this solution for largest rectangle in histogram 
+        
+        :param matrix: 
+        :return: 
+        """
         if not matrix or not matrix[0]:
             return 0
         n = len(matrix[0])
