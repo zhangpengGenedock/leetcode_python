@@ -29,6 +29,11 @@ class Solution(object):
     def recoverTree(self, root):
         """
         https://discuss.leetcode.com/topic/5326/elegant-python-code-using-yield-iterator
+        
+        Basic algorithm is inorder traveling the tree to find the swapped pair nodes.
+
+        By using “yield” iterator, the traveling procedure can be very elegant.
+        1 2 3 6 5 4
         :type root: TreeNode
         :rtype: void Do not return anything, modify root in-place instead.
         """
