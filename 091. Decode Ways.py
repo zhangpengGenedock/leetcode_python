@@ -18,6 +18,9 @@ class Solution(object):
     def numDecodings(self, s):
         """
         https://discuss.leetcode.com/topic/7823/accpeted-python-dp-solution/2
+        
+        #dp[i] = dp[i-1] if s[i] != "0"
+        #dp[i-2] if "09" < s[i-1:i+1] < "27"
         :type s: str
         :rtype: int
         """
