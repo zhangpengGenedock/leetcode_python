@@ -12,6 +12,8 @@ Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 Note:
 Although the above answer is in lexicographical order, your answer could be in any order you want.
 """
+
+
 class Solution(object):
     def letterCombinations(self, digits):
         """
@@ -32,3 +34,28 @@ class Solution(object):
             '9': 'wxyz'
         }
         return reduce(lambda acc, digit: [x + y for x in acc for y in kvmaps[digit]], digits, [''])
+
+    def letter_combinations(self, digits):
+        mapping = {'1': '', '2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl', '6': 'mno', '7': 'pqrs', '8': 'ruv',
+                   '9': 'wxyz'}
+        if len(digits) == 0:
+            return []
+        if len(digits) == 1:
+            return list(mapping[digits[0]])
+        prev = self.letter_combinations(digits[:-1])
+        additional = mapping[digits[-1]]
+        return [s + c for s in prev for c in additional]
+
+    def letter_combinations2(self, digits):
+        mapping = {'1': '', '2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl', '6': 'mno', '7': 'pqrs', '8': 'ruv',
+                   '9': 'wxyz'}
+        if len(digits) == 0:
+            return []
+        if len(digits) == 1:
+            return list(mapping[digits[0]])
+        result = ['']
+        for d in digits:
+            if d == '1':
+                continue
+            result = [ans + c for c in mapping[d] for ans in result]
+        return result
