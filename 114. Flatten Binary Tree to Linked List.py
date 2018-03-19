@@ -58,6 +58,19 @@ class Solution(object):
         """
         https://discuss.leetcode.com/topic/33192/8-lines-of-python-solution-reverse-preorder-traversal
         confused but beautiful
+             1
+            / \
+           2   5
+          / \   \
+         3   4   6
+          6 -> None
+          prev = 6
+          
+          5 -> (prev)6
+          prev = 5
+          
+          4 -> (prev)5
+          prev = 4
         """
         self.prev = None
 
