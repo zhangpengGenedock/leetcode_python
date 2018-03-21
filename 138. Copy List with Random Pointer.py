@@ -42,6 +42,7 @@ class Solution(object):
         node = head
         copy = head_copy = head and head.next
         while node:
+            # ? 未看懂 node.next = node 含义? 死循环？
             node.next = node = copy.next
             copy.next = copy = node and node.next
 
