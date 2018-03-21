@@ -31,6 +31,7 @@ class Solution(object):
         """
 
         def dfs(node):
+            # returns: max one side path sum, max path sum
             l = r = 0
             ls = rs = None
             if node.left:
