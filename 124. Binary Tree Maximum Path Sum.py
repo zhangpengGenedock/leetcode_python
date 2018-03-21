@@ -32,8 +32,15 @@ class Solution(object):
 
         def dfs(node):
             # returns: max one side path sum, max path sum
+            """
+            the given solution deals with negative numbers just fine. the l and s variables are used to track 
+            “one-side” max sum, and so initialized with zero to indicate that this one side is not being taken into 
+            account (hence, it must be zero). lr and rs track the max path (that doesn’t go through the root), 
+            so they are initialized with None to represent the minimum value possible (max will consider None to be 
+            the lowest value possible) :param node: :return: 
+            """
             l = r = 0
-            ls = rs = None
+            ls = rs = 0
             if node.left:
                 l, ls = dfs(node.left)
                 l = max(l, 0)
