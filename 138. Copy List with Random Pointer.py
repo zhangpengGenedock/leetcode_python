@@ -18,6 +18,12 @@ class RandomListNode(object):
 class Solution(object):
     def copyRandomList(self, head):
 
+        """
+        {@link} 138. Copy List with Random Pointer.jpg)
+        :param head: 
+        :return: 
+        """
+
         # Insert each node's copy right after it, already copy .label
         node = head
         while node:
