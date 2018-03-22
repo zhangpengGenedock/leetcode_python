@@ -2,6 +2,8 @@
 https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/
 
 """
+
+
 # Follow up for "Find Minimum in Rotated Sorted Array":
 # What if duplicates are allowed?
 #
@@ -47,6 +49,7 @@ class Solution(object):
                 l = m + 1
             elif nums[m] < nums[r]:
                 r = m
+            # When num[mid] == num[hi], we couldn’t sure the position of minimum in mid’s left or right, so just let upper bound reduce one.
             else:
                 r = r - 1
         return nums[l]
