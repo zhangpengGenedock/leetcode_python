@@ -22,6 +22,7 @@ class Solution(object):
         i, j = 0, len(nums) - 1
         while i < j:
             m = i + (j - i) / 2
+            # todo check 该值是否比两边都小，则直接返回
             if nums[m] > nums[j]:
                 i = m + 1
             else:
